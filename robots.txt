@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /assistant.html
+Sitemap: https://knowyourrights.co.uk/sitemap.xml

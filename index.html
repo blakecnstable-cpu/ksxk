@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KnowYourRights — UK Legal Rights in Plain English</title>
+<meta name="description" content="Free plain-English guides to UK consumer rights, online rights & social media law. Know your rights before you need them.">
+<meta name="keywords" content="UK consumer rights, online rights, refund rights, GDPR UK, know your rights UK">
+<meta property="og:title" content="KnowYourRights — Your Rights, Clearly Explained">
+<meta property="og:description" content="Free plain-English guides to UK consumer rights and online rights.">
+<link rel="canonical" href="https://knowyourrights.co.uk">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"KnowYourRights","url":"https://knowyourrights.co.uk","description":"Free plain-English guides to UK consumer rights and online rights"}</script>
+<style>
+/* HERO */
+.hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;padding:68px 0 0;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 50%,#1a2f1a 0%,transparent 70%)}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px}
+.hero-inner{max-width:1200px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1fr 440px;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(200,247,58,.12);border:1px solid rgba(200,247,58,.25);color:var(--lime);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:24px}
+.hero-tag span{width:6px;height:6px;border-radius:50%;background:var(--lime);flex-shrink:0}
+.hero h1{color:#fff;font-size:clamp(48px,7vw,80px);margin-bottom:22px;line-height:1.0}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{font-size:18px;color:rgba(255,255,255,.55);max-width:440px;margin-bottom:36px;font-weight:300;line-height:1.7}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:28px;backdrop-filter:blur(4px)}
+.checker-head{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:6px}
+.checker-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px}
+.sit-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.sit-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.7);cursor:pointer;text-align:left;transition:all .2s;display:flex;align-items:center;gap:7px}
+.sit-btn:hover,.sit-btn.on{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+.checker-result{background:rgba(200,247,58,.1);border:1px solid rgba(200,247,58,.25);border-radius:12px;padding:14px 16px;display:none;animation:fadeUp .3s ease}
+.checker-result.show{display:block}
+.cr-head{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:var(--lime);margin-bottom:5px}
+.cr-body{font-size:12px;color:rgba(255,255,255,.6);line-height:1.6}
+.cr-link{display:inline-block;margin-top:7px;font-size:11px;font-weight:600;color:var(--lime);text-decoration:underline}
+
+/* TRUST BAR */
+.trust{background:var(--lime);padding:14px 40px;display:flex;align-items:center;gap:0}
+.trust-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,12,10,.5);margin-right:32px;white-space:nowrap}
+.trust-items{display:flex;gap:28px;flex-wrap:wrap}
+.trust-item{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:5px}
+.trust-item::before{content:'✓'}
+
+/* TOPICS */
+.topics{padding:100px 0}
+.topics-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.topic{border-radius:var(--r-xl);padding:32px;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;min-height:200px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.topic:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.topic.tall{grid-row:span 2;min-height:440px}
+.t1{background:var(--coral)}
+.t2{background:var(--blue)}
+.t3{background:var(--lime)}
+.t4{background:var(--lavender)}
+.t5{background:var(--dark2);border:1px solid rgba(255,255,255,.08)}
+.topic-num{position:absolute;top:20px;right:24px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:80px;opacity:.1;line-height:1;color:inherit}
+.topic-tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.65;margin-bottom:8px}
+.topic-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(18px,2vw,24px);line-height:1.2;margin-bottom:8px}
+.topic-desc{font-size:13px;opacity:.7;font-weight:400;line-height:1.5}
+.topic-arrow{display:inline-flex;align-items:center;gap:5px;margin-top:16px;font-size:13px;font-weight:600}
+.t1 .topic-tag,.t1 .topic-name,.t1 .topic-desc,.t1 .topic-arrow,.t1 .topic-num{color:#fff}
+.t2 .topic-tag,.t2 .topic-name,.t2 .topic-desc,.t2 .topic-arrow,.t2 .topic-num{color:#fff}
+.t3 .topic-tag,.t3 .topic-name,.t3 .topic-desc,.t3 .topic-arrow,.t3 .topic-num{color:var(--ink)}
+.t4 .topic-tag,.t4 .topic-name,.t4 .topic-desc,.t4 .topic-arrow,.t4 .topic-num{color:var(--purple)}
+.t5 .topic-tag,.t5 .topic-name,.t5 .topic-desc,.t5 .topic-arrow,.t5 .topic-num{color:rgba(255,255,255,.85)}
+
+/* STATS */
+.stats{background:var(--dark);padding:80px 0}
+.stats-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06)}
+.stat{padding:48px 40px;background:var(--dark);text-align:center}
+.stat-n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(48px,7vw,80px);color:var(--lime);line-height:1;margin-bottom:10px}
+.stat-d{font-size:14px;color:rgba(255,255,255,.4);line-height:1.5;max-width:180px;margin:0 auto}
+
+/* AI PROMO */
+.ai-promo{padding:100px 0;background:var(--dark)}
+.ai-promo-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ai-promo h2{color:#fff;margin-bottom:16px}
+.ai-promo p{color:rgba(255,255,255,.5);font-size:16px;margin-bottom:28px;line-height:1.7}
+.chat-card{background:var(--dark2);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-xl);padding:28px}
+.chat-msg{border-radius:14px;padding:13px 15px;margin-bottom:10px;font-size:13px;line-height:1.6}
+.chat-msg.u{background:rgba(200,247,58,.1);border:1px solid rgba(200,247,58,.15);color:rgba(200,247,58,.9);margin-left:24px}
+.chat-msg.b{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.7);margin-right:24px}
+.chat-lbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;color:#fff}
+.chat-lock{display:flex;align-items:center;gap:8px;margin-top:14px;background:rgba(255,77,53,.1);border:1px solid rgba(255,77,53,.2);border-radius:10px;padding:10px 14px;font-size:12px;color:#ff7b6a}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;padding:40px 20px}
+  .topics-grid{grid-template-columns:1fr}
+  .topic.tall{grid-row:span 1;min-height:220px}
+  .stats-inner{grid-template-columns:1fr}
+  .stats-inner .stat{border-bottom:1px solid rgba(255,255,255,.06)}
+  .ai-promo-inner{grid-template-columns:1fr;padding:0 20px}
+  .trust{padding:14px 20px;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">KnowYour<em>Rights</em></a>
+  <div class="nav-links">
+    <a href="consumer-rights.html">Consumer</a>
+    <a href="online-rights.html">Online</a>
+    <a href="tools.html">Tools</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="assistant.html" class="nav-cta">AI Assistant</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span></span>Free · UK Law · Plain English</div>
+      <h1>Your rights.<br><em>Actually</em> explained.</h1>
+      <p>Consumer law. Online rights. Social media. Written for real people — because legal knowledge shouldn't cost £300/hour.</p>
+      <div class="hero-btns">
+        <a href="consumer-rights.html" class="btn btn-lime">Explore guides →</a>
+        <a href="tools.html" class="btn btn-ghost">Free tools</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="checker-head">Quick rights check</div>
+      <div class="checker-sub">What's your situation?</div>
+      <div class="sit-grid">
+        <button class="sit-btn" onclick="check('refund',this)">🛍️ Refused a refund</button>
+        <button class="sit-btn" onclick="check('post',this)">📱 Post taken down</button>
+        <button class="sit-btn" onclick="check('scam',this)">⚠️ Been scammed</button>
+        <button class="sit-btn" onclick="check('data',this)">🔐 Data leaked</button>
+      </div>
+      <div class="checker-result" id="cr">
+        <div class="cr-head" id="crh"></div>
+        <div class="cr-body" id="crb"></div>
+        <a class="cr-link" id="crl" href="#">Read the full guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <span class="trust-lbl">Built on UK law</span>
+  <div class="trust-items">
+    <span class="trust-item">Consumer Rights Act 2015</span>
+    <span class="trust-item">UK GDPR</span>
+    <span class="trust-item">Online Safety Act 2023</span>
+    <span class="trust-item">No sign-up needed</span>
+    <span class="trust-item">Always free to read</span>
+  </div>
+</div>
+
+<!-- TOPICS -->
+<section class="topics">
+  <div class="container">
+    <div class="section-label reveal">What we cover</div>
+    <h2 style="margin-bottom:32px" class="reveal">The stuff that actually<br>happens to you.</h2>
+    <div class="topics-grid reveal">
+      <a class="topic tall t1" href="consumer-rights.html">
+        <div class="topic-num">01</div>
+        <div class="topic-tag">Consumer rights</div>
+        <div class="topic-name">Refunds, returns & broken promises</div>
+        <div class="topic-desc">The Consumer Rights Act 2015 gives you real power. Most shops don't want you to know how much.</div>
+        <div class="topic-arrow">Read the full guide →</div>
+      </a>
+      <a class="topic t2" href="online-rights.html">
+        <div class="topic-num">02</div>
+        <div class="topic-tag">Online rights</div>
+        <div class="topic-name">When a platform removes your content</div>
+        <div class="topic-desc">What they can and can't do — and how to appeal.</div>
+        <div class="topic-arrow">Read guide →</div>
+      </a>
+      <a class="topic t3" href="consumer-rights.html#scams">
+        <div class="topic-num">03</div>
+        <div class="topic-tag">Scams</div>
+        <div class="topic-name">Got scammed? Step-by-step guide</div>
+        <div class="topic-desc">Chargebacks, Action Fraud, bank transfers.</div>
+        <div class="topic-arrow">Read guide →</div>
+      </a>
+      <a class="topic t4" href="online-rights.html#gdpr">
+        <div class="topic-num">04</div>
+        <div class="topic-tag">Data & privacy</div>
+        <div class="topic-name">Your GDPR rights in plain English</div>
+        <div class="topic-desc">Request, correct, and delete your personal data.</div>
+        <div class="topic-arrow">Read guide →</div>
+      </a>
+      <a class="topic t5" href="online-rights.html#social">
+        <div class="topic-num">05</div>
+        <div class="topic-tag">Social media</div>
+        <div class="topic-name">Harassment, defamation & fake accounts</div>
+        <div class="topic-desc">What the law actually says and what to do.</div>
+        <div class="topic-arrow">Read guide →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal"><div class="stat-n">66%</div><div class="stat-d">of UK adults face a legal problem every year</div></div>
+    <div class="stat reveal" style="transition-delay:.1s"><div class="stat-n">£1.1B</div><div class="stat-d">lost to scams in the UK annually</div></div>
+    <div class="stat reveal" style="transition-delay:.2s"><div class="stat-n">21%</div><div class="stat-d">believe justice is truly accessible to them</div></div>
+  </div>
+</div>
+
+<!-- AI PROMO -->
+<div class="ai-promo">
+  <div class="ai-promo-inner">
+    <div class="reveal">
+      <div class="tag tag-lime" style="margin-bottom:16px">New</div>
+      <h2>Ask our AI legal assistant</h2>
+      <p>Get instant, personalised answers to your UK legal questions. Describe your situation and our AI will walk you through your rights and exactly what to do.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="pricing.html" class="btn btn-lime">See plans from £9/mo</a>
+        <a href="assistant.html" class="btn btn-ghost">Try it now</a>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,.25);margin-top:12px;margin-bottom:0">Not a solicitor. For complex matters, always seek professional advice.</p>
+    </div>
+    <div class="chat-card reveal" style="transition-delay:.15s">
+      <div class="chat-lbl">You</div>
+      <div class="chat-msg u">A shop is refusing my refund for a faulty jumper I bought 3 weeks ago. Can they do this?</div>
+      <div class="chat-lbl" style="margin-top:14px">KnowYourRights AI</div>
+      <div class="chat-msg b">No — they can't. Under the Consumer Rights Act 2015, you have a 30-day right to reject faulty goods for a full refund. 3 weeks is well within that window. Here's exactly what to say...</div>
+      <div class="chat-lock">🔒 Full answer available to subscribers</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div style="padding:80px 0;background:var(--cream)">
+  <div class="container">
+    <div class="nl-banner reveal">
+      <h2>Know your rights before you need them.</h2>
+      <div class="nl-form">
+        <input class="nl-input" type="email" id="nle" placeholder="your@email.com">
+        <button class="nl-submit" onclick="const i=document.getElementById('nle');if(i.value.includes('@')){this.textContent='✓ Done!';i.value=''}else i.style.borderColor='var(--coral)'">Get free updates</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">KnowYour<em>Rights</em></div>
+      <p>Free, plain-English guides to UK consumer rights and online rights — for everyone.</p>
+    </div>
+    <div class="footer-col"><h5>Guides</h5><a href="consumer-rights.html">Consumer rights</a><a href="online-rights.html">Online rights</a><a href="online-rights.html#social">Social media</a><a href="online-rights.html#gdpr">Data & privacy</a></div>
+    <div class="footer-col"><h5>Tools</h5><a href="tools.html">Letter builder</a><a href="tools.html#checker">Rights checker</a><a href="assistant.html">AI assistant</a></div>
+    <div class="footer-col"><h5>Info</h5><a href="about.html">About</a><a href="pricing.html">Pricing</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 KnowYourRights</div>
+    <div class="footer-disclaimer">KnowYourRights provides general legal information about UK law. It is not a law firm and does not provide legal advice. For specific legal matters, consult a qualified solicitor.</div>
+  </div>
+</footer>
+
+<script>
+const R={refund:{h:"You likely have the right to a refund.",b:"Under the Consumer Rights Act 2015, faulty goods qualify for a full refund within 30 days. A 'no refunds' sign doesn't override this.",l:"consumer-rights.html"},post:{h:"Platforms must explain why — and allow appeals.",b:"Under the Online Safety Act 2023, you have a right to a clear reason and a fair appeals process.",l:"online-rights.html"},scam:{h:"Act now — you may still get your money back.",b:"Call your bank's fraud line immediately. Request a chargeback if paid by card. Report to Action Fraud.",l:"consumer-rights.html#scams"},data:{h:"You have strong rights under UK GDPR.",b:"Submit a free Subject Access Request, request data deletion, and complain to the ICO if ignored.",l:"online-rights.html#gdpr"}};
+function check(t,btn){document.querySelectorAll('.sit-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const r=R[t];document.getElementById('crh').textContent=r.h;document.getElementById('crb').textContent=r.b;document.getElementById('crl').href=r.l;const c=document.getElementById('cr');c.classList.remove('show');void c.offsetWidth;c.classList.add('show');}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
